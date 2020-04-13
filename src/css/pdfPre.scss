@@ -1,0 +1,101 @@
+#pdfPre{
+    background: #fafafa;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+    .bottomTxt{
+        font-size: .26rem;
+        color: #999;
+        margin-top: .2rem!important;
+    }
+    .item{
+        width: 95%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: .20rem;
+    }
+    .imgBox{
+        position: relative;
+    }
+    .large{
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        right: .2rem;
+        width: .50rem;
+        height: .50rem;
+        background: url('../images/openPdfImg.png');
+        background-size: cover;
+    }
+    .mint-loadmore{
+      padding-bottom: 2rem;
+    }
+    .mint-loadmore-top, .mint-loadmore-bottom{
+        height: .26rem!important;
+        line-height: .26rem!important;
+    }
+    .floatBtm {
+        // margin-top: 6rem;
+        border-top: 1px solid #666;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        .checkBox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          height: .6rem;
+          line-height: .6rem;
+          text-align: center;
+          .checkIcon {
+            display: inline-block;
+            vertical-align: middle;
+            width: .24rem;
+            height: .24rem;
+            background: url("../images/phoneVerify_checkon.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .checkIcon1 {
+            display: inline-block;
+            vertical-align: middle;
+            width: .24rem;
+            height: .24rem;
+            background: url("../images/phoneVerify_check.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          .checkText {
+            display: inline-block;
+            vertical-align: middle;
+            height: .6rem;
+            line-height: .6rem;
+            font-size: .24rem;
+            color: #666;
+            margin-left: .1rem;
+          }
+        }
+        .btnBox {
+          width: 100%;
+          background: #fff;
+          height: 1.35rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 99999;
+          .nextBtn {
+            width: 5.74rem;
+            height: .74rem;
+            margin: 0 auto;
+            border-radius: 10px;
+            color: #fff;
+            background: #df1115;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .28rem;
+          }
+        }
+      }
+  }
+ 
