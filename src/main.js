@@ -9,8 +9,6 @@ import 'mint-ui/lib/style.css'
 import {Loadmore } from 'mint-ui';
 require ('./js/resize.js');	//移动端页面适配
 require ('./js/resetAlert.js');	//测试弹框去除域名
-require ('./js/showError.js');	//错误机制
-
 import preview from 'vue-photo-preview'
 import 'vue-photo-preview/dist/skin.css'
 Vue.component(Loadmore.name, Loadmore);

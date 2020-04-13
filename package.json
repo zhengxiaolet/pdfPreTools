@@ -1,8 +1,8 @@
 {
-  "name": "feng",
+  "name": "zhengxiaolet",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "feng",
+  "author": "zhengxiaolet",
   "private": true,
   "scripts": {
     "start": "node build/dev-server.js",
