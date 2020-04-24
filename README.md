@@ -16,6 +16,7 @@ PDF在线预览插件（可支持分享）
 |pdfInfo|普通PDF信息|object|{fileName:"",pdfUrl:""}|N|
 |fileName|例如：我已阅读xxx|string|空|N|
 |pdfUrl|普通PDF的链接地址|string|空|N|
+|jumpHref|点击下一步跳转的地址|string|空|N|
 <br>
 
 电子保单PDF需传入`policyInfo`
@@ -24,6 +25,7 @@ PDF在线预览插件（可支持分享）
 |policyInfo|电子保单信息|object|{fileName:"",businessNo:""}|N|
 |fileName|例如：我已阅读xxx|string|空|N|
 |businessNo|业务号|string|空|N|
+|jumpHref|点击下一步跳转的地址|string|空|N|
 <br>
 
 如需分享需传入`shareInfo`
