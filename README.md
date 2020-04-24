@@ -14,5 +14,5 @@ PDF在线预览插件（可支持分享）
 |policyInfo|电子保单信息|object|{fileName:'',businessNo:''}|N|
 |fileName|例如：我已阅读xxx|string|空|N|
 |businessNo|业务号|string|空|N|
-
->普通PDF需传入pdfInfo，电子保单PDF需传入policyInfo<br>
+<br>
+普通PDF需传入`pdfInfo`，电子保单PDF需传入`policyInfo`
