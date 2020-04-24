@@ -7,7 +7,7 @@ Vue.use(Router)
 
 export default new Router({
     routes: [
-        //保单回执  -- 预览页
+        //预览页
         {
             path: '/pdfPre',
             name: 'pdfPre',

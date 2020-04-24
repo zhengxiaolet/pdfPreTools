@@ -86,6 +86,7 @@ export default {
         },
         supplierId: policyInfo ? policyInfo.supplierId : "100001", //供应商ID
         businessNo: policyInfo ? policyInfo.businessNo : "8088577873102568", //业务号
+        pdfUrl: pdfInfo ? pdfInfo.pdfUrl : "",//pdf链接
         scaling: "2.5", //缩放比例
         reqType: "2", //转换类型
         imageType: "jpg", //图片类型
@@ -172,17 +173,17 @@ export default {
     document.title = title ? title : "查看电子保单";
     this.getPdfImgList("1");
     wxConfig({
-      appId: shareInfo.appid ? shareInfo.appid : "",
+      appId: shareInfo ? shareInfo.appid : "",
       title: "电子保单查看", // 分享标题
       desc:
         "尊敬的" +
-        decodeURIComponent(shareInfo.holderName) +
+        decodeURIComponent(shareInfo?shareInfo.holderName:'') +
         "先生/女士,请您查阅电子保单。", // 分享描述
-      imgUrl: shareInfo.imgUrl ? shareInfo.imgUrl : "",
+      imgUrl: shareInfo ? shareInfo.imgUrl : "",
       shareUrl: "#/pdfPre"
     });
   }
 };
 </script>
-<style style scoped lang="scss" src="@/css/pdfPre.scss">
+<style scoped lang="scss" src="@/css/pdfPre.scss">
 </style>
