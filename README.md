@@ -16,4 +16,4 @@ PDF在线预览插件（可支持分享）
 |businessNo|业务号|string|空|N|
 <br>
 
-    普通PDF需传入`pdfInfo`，电子保单PDF需传入`policyInfo`
+普通PDF需传入`pdfInfo`，电子保单PDF需传入`policyInfo`
