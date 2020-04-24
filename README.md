@@ -14,7 +14,7 @@ PDF在线预览插件（可支持分享）
 |policyInfo|电子保单信息|object|{fileName:'',businessNo:''}|N|
 |fileName|例如：我已阅读xxx|string|空|N|
 |businessNo|业务号|string|空|N|
-|shareInfo|分享内容|object|{appid:'',title:'',desc:'',imgUrl:''}|N|
+|shareInfo|分享信息|object|{appid:'',title:'',desc:'',imgUrl:''}|N|
 |appid|公众号的appid|string|空|N|
 |title|分享链接的title|string|空|N|
 |desc|分享链接的描述|string|空|N|
