@@ -2,9 +2,6 @@
 PDF在线预览插件（可支持分享）
 ===
 
-# author:zhengxiaolet
-
-<!-- >普通PDF需传入pdfInfo，电子保单PDF需传入policyInfo<br> -->
 |属性|说明|类型|默认值|是否必传|
 |:---|:---|:---|:---|:---|
 |title|当前页面的名字|string|查看电子保单|N|
@@ -17,3 +14,5 @@ PDF在线预览插件（可支持分享）
 |policyInfo|电子保单信息|object|{fileName:'',businessNo:''}|N|
 |fileName|文件名字（我已阅读...|string|空|N|
 |businessNo|业务号|string|空|N|
+
+>普通PDF需传入pdfInfo，电子保单PDF需传入policyInfo<br>
