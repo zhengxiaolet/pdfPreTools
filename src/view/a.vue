@@ -2,7 +2,7 @@
   <div id="pdfPre">
     <div id="iframe-box">
       <iframe
-        src="https://test.jklife.com/pdfPreTools/#/pdfPre?businessNo=8088577873102568&jumpTxt=发送到"
+        src="https://test.jklife.com/pdfPreTools/#/pdfPre?appid=WECHAT-APP-SERVER&appkey=DwRaJi6hMN&businessNo=8088577873102568&pdfUrl=http://test.jklife.com:8888/jkdsimage/images/product/img/product_comment/JK10205_YXJSTK.pdf"
         height="100%"
         width="100%"
         style="position:absolute;top:0;left: 0;"
