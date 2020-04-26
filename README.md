@@ -1,7 +1,28 @@
 
-PDF在线预览插件（可支持分享）
+PDF在线预览插件
 ===
+>使用方式
+```javascript
+<div id="iframe-box">
+      <iframe
+        src="https://test.jklife.com/pdfPreTools/#/pdfPre?businessNo=8088577873102568&jumpTxt=发送到"
+        height="100%"
+        width="100%"
+        style="position:absolute;top:0;left: 0;"
+      ></iframe>
+    </div>
 
+    let ifram = document.getElementById("ifram");
+    if (navigator.userAgent.match(/iPad|iPhone/i)) {
+      let iframe_box = document.getElementById("iframe-box");
+      iframe_box.style.width = 100 + "%";
+      iframe_box.style.height = 1000 + "px";
+      iframe_box.style.overflowX = "hidden";
+      iframe_box.style.overflowY = "scroll";
+      iframe_box.style.webkitOverflowScrolling = "touch";
+    }
+
+```
 |属性|说明|类型|默认值|
 |:---|:---|:---|:---|
 |title|当前页面的名字|String|查看电子保单|

@@ -15,6 +15,9 @@ Vue.component(Loadmore.name, Loadmore);
 Vue.config.productionTip = false
 Vue.component(Vodal.name, Vodal);
 Vue.use(preview)
+// import Vconsole from 'vconsole'
+// let vConsole = new Vconsole()
+// Vue.use(vConsole)
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
