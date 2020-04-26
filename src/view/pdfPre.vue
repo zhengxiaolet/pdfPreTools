@@ -133,8 +133,8 @@ export default {
             transDate: getDate(),
             transTime: getHms(),
             transId: new Date().getTime(),
-            appid: this.appid ,
-            appkey: this.appkey ,
+            appid: this.appid,
+            appkey: this.appkey,
             sign: "E8TRB2A0ZZ7LQ5QT503J3FIPR4PDVZ"
           },
           supplierId: "100001", //供应商ID
@@ -175,17 +175,17 @@ export default {
       shareImgUrl
     } = this.$route.query;
     this.title = decodeURIComponent(title);
-    this.appid = appid?decodeURIComponent(appid):"WECHAT-APP-SERVER";
-    this.appkey = appkey?decodeURIComponent(appkey):"DwRaJi6hMN";
-    this.fileName = fileName?decodeURIComponent(fileName):"";
-    this.jumpUrl = jumpUrl?decodeURIComponent(jumpUrl):"";
+    this.appid = appid ? decodeURIComponent(appid) : "WECHAT-APP-SERVER";
+    this.appkey = appkey ? decodeURIComponent(appkey) : "DwRaJi6hMN";
+    this.fileName = fileName ? decodeURIComponent(fileName) : "";
+    this.jumpUrl = jumpUrl ? decodeURIComponent(jumpUrl) : "";
     this.jumpTxt = jumpTxt ? decodeURIComponent(jumpTxt) : "";
-    this.pdfUrl = pdfUrl?decodeURIComponent(pdfUrl):"";
-    this.businessNo = businessNo?businessNo:"";
-    this.shareAppid = shareAppid?decodeURIComponent(shareAppid):"";
-    this.shareTitle = shareTitle?decodeURIComponent(shareTitle):"";
-    this.shareImgUrl = shareImgUrl?decodeURIComponent(shareImgUrl):"";
-    this.shareDesc = shareDesc?decodeURIComponent(shareDesc):"";
+    this.pdfUrl = pdfUrl ? decodeURIComponent(pdfUrl) : "";
+    this.businessNo = businessNo ? businessNo : "";
+    this.shareAppid = shareAppid ? decodeURIComponent(shareAppid) : "";
+    this.shareTitle = shareTitle ? decodeURIComponent(shareTitle) : "";
+    this.shareImgUrl = shareImgUrl ? decodeURIComponent(shareImgUrl) : "";
+    this.shareDesc = shareDesc ? decodeURIComponent(shareDesc) : "";
     if (pdfUrl) {
       localStorage.removeItem("pdfPreNextUrl");
     }
