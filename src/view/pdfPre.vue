@@ -15,7 +15,7 @@
     <div class="floatBtm" v-if="showCheckBOx">
       <div class="checkBox">
         <i :class="checkState?'checkIcon':'checkIcon1'" @click="changeState()"></i>
-        <span class="checkText">{{name}}</span>
+        <span class="checkText">{{fileName}}</span>
       </div>
       <div class="btnBox">
         <div class="nextBtn" @click="nextBtn">下一步</div>
@@ -73,7 +73,8 @@ export default {
     },
     //获取PDF图片
     getPdfImgList: function(num) {
-      const { title, headInfo, pdfInfo, policyInfo } = this.$route.query;
+      const { headInfo } = this.$route.query;
+      let pdfPreInfo = JSON.parse(localStorage.getItem("pdfPreInfo"));
       let info = {
         head: {
           transCode: "PT600666",
@@ -84,9 +85,9 @@ export default {
           appkey: headInfo ? headInfo.appkey : "DwRaJi6hMN",
           sign: "E8TRB2A0ZZ7LQ5QT503J3FIPR4PDVZ"
         },
-        supplierId: policyInfo ? policyInfo.supplierId : "100001", //供应商ID
-        businessNo: policyInfo ? policyInfo.businessNo : "8088577873102568", //业务号
-        pdfUrl: pdfInfo ? pdfInfo.pdfUrl : "",//pdf链接
+        supplierId: "100001", //供应商ID
+        businessNo: pdfPreInfo ? pdfPreInfo.businessNo : "8088577873102568", //业务号
+        pdfUrl: pdfPreInfo ? pdfPreInfo.pdfUrl : "",//pdf链接
         scaling: "2.5", //缩放比例
         reqType: "2", //转换类型
         imageType: "jpg", //图片类型
@@ -119,9 +120,9 @@ export default {
       let pdfPreInfo = JSON.parse(localStorage.getItem("pdfPreInfo"));
       const { title, headInfo, pdfInfo, policyInfo } = this.$route.query;
       this.name = policyInfo
-        ? policyInfo.fileName
+        ? pdfPreInfo.fileName
         : "我已查阅电子保险合同并阅读其内容";
-      if (this.checkState) {
+      if (this.checkState && pdfPreInfo.jumpHref) {
         let info = {
           head: {
             transCode: "MSL6068",
@@ -132,9 +133,9 @@ export default {
             appkey: headInfo ? headInfo.appkey : "DwRaJi6hMN",
             sign: "E8TRB2A0ZZ7LQ5QT503J3FIPR4PDVZ"
           },
-          supplierId: policyInfo ? policyInfo.supplierId : "100001", //供应商ID
-          tenantId: policyInfo ? policyInfo.tenantId : "2017032717500543538",
-          businessNo: policyInfo ? policyInfo.businessNo : "8088577873102568", //业务号
+          supplierId: "100001", //供应商ID
+          tenantId: pdfPreInfo ? pdfPreInfo.tenantId : "2017032717500543538",
+          businessNo: pdfPreInfo ? pdfPreInfo.businessNo : "8088577873102568", //业务号
           whetherCheck: "Y",
           checkTime: moment(new Date()).format("YYYY-MM-DD hh:mm:ss")
         };
@@ -164,11 +165,12 @@ export default {
       policyInfo,
       shareInfo
     } = this.$route.query;
+
     localStorage.setItem("pdfPreInfo", pdfInfo ? pdfInfo : policyInfo);
     document.title = title ? title : "查看电子保单";
     this.getPdfImgList("1");
     wxConfig({
-      appId: shareInfo ? shareInfo.appid : "",
+      appId: shareInfo ? shareInfo.appid : "wxfee39ae209983e48",
       title: shareInfo ? shareInfo.title:"电子保单查看", // 分享标题
       desc:shareInfo ? shareInfo.desc:"尊敬的先生/女士,请您查阅电子保单。", // 分享描述
       imgUrl: shareInfo ? shareInfo.imgUrl : "",
