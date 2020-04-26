@@ -133,8 +133,8 @@ export default {
             sign: "E8TRB2A0ZZ7LQ5QT503J3FIPR4PDVZ"
           },
           supplierId: policyInfo ? policyInfo.supplierId : "100001", //供应商ID
-          businessNo: policyInfo ? policyInfo.businessNo : "8088577873102568", //业务号
           tenantId: policyInfo ? policyInfo.tenantId : "2017032717500543538",
+          businessNo: policyInfo ? policyInfo.businessNo : "8088577873102568", //业务号
           whetherCheck: "Y",
           checkTime: moment(new Date()).format("YYYY-MM-DD hh:mm:ss")
         };
@@ -164,9 +164,7 @@ export default {
       policyInfo,
       shareInfo
     } = this.$route.query;
-    if (pdfInfo || policyInfo) {
-      localStorage.setItem("pdfPreInfo", pdfInfo ? pdfInfo : policyInfo);
-    }
+    localStorage.setItem("pdfPreInfo", pdfInfo ? pdfInfo : policyInfo);
     document.title = title ? title : "查看电子保单";
     this.getPdfImgList("1");
     wxConfig({
