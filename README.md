@@ -45,12 +45,3 @@ if (navigator.userAgent.match(/iPad|iPhone/i)) {
 |:---|:---|:---|:---|
 |businessNo|业务号|String|空|
 <br>
-
-分享功能需传入以下参数
-|属性|说明|类型|默认值|
-|:---|:---|:---|:---|
-|shareAppid|公众号的appid|String|空|
-|shareTitle|分享链接的title|String|空|
-|shareDesc|分享链接的描述|String|空|
-|shareImgUrl|分享链接的小图|String|空|
-<br>

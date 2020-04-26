@@ -170,10 +170,10 @@ export default {
       jumpTxt,
       pdfUrl,
       businessNo,
-      shareAppid,
-      shareTitle,
-      shareDesc,
-      shareImgUrl
+      // shareAppid,
+      // shareTitle,
+      // shareDesc,
+      // shareImgUrl
     } = this.$route.query;
     this.title = title ? decodeURIComponent(title) : "查看电子保单";
     this.appid = appid ? decodeURIComponent(appid) : "WECHAT-APP-SERVER";
@@ -183,10 +183,10 @@ export default {
     this.jumpTxt = jumpTxt ? decodeURIComponent(jumpTxt) : "";
     this.pdfUrl = pdfUrl ? decodeURIComponent(pdfUrl) : "";
     this.businessNo = businessNo ? businessNo : "";
-    this.shareAppid = shareAppid ? decodeURIComponent(shareAppid) : "";
-    this.shareTitle = shareTitle ? decodeURIComponent(shareTitle) : "";
-    this.shareImgUrl = shareImgUrl ? decodeURIComponent(shareImgUrl) : "";
-    this.shareDesc = shareDesc ? decodeURIComponent(shareDesc) : "";
+    // this.shareAppid = shareAppid ? decodeURIComponent(shareAppid) : "";
+    // this.shareTitle = shareTitle ? decodeURIComponent(shareTitle) : "";
+    // this.shareImgUrl = shareImgUrl ? decodeURIComponent(shareImgUrl) : "";
+    // this.shareDesc = shareDesc ? decodeURIComponent(shareDesc) : "";
     if (pdfUrl) {
       localStorage.removeItem("pdfPreNextUrl");
     }
@@ -199,15 +199,15 @@ export default {
     }
     document.title = title ? this.title : "查看电子保单";
     this.getPdfImgList("1");
-    if (shareAppid && shareTitle && shareTitle && shareImgUrl && shareDesc) {
-      wxConfig({
-        appId: this.shareAppid,
-        title: this.shareTitle, // 分享标题
-        desc: this.shareDesc, // 分享描述
-        imgUrl: this.shareImgUrl,
-        shareUrl: window.location.href
-      });
-    }
+    // if (shareAppid && shareTitle && shareTitle && shareImgUrl && shareDesc) {
+    //   wxConfig({
+    //     appId: this.shareAppid,
+    //     title: this.shareTitle, // 分享标题
+    //     desc: this.shareDesc, // 分享描述
+    //     imgUrl: this.shareImgUrl,
+    //     shareUrl: window.location.href
+    //   });
+    // }
   }
 };
 </script>
