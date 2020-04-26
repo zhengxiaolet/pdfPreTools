@@ -1,6 +1,7 @@
 <template>
   <div id="pdfPre">
     <mt-loadmore
+      :class="jumpTxt?'':'mint-loadmoreA'"
       :bottom-method="loadBottom"
       :bottom-all-loaded="allLoaded"
       :auto-fill="false"
@@ -12,12 +13,12 @@
       </div>
       <div slot="bottom" class="mint-loadmore-bottom bottomTxt">{{showAllImg?'已加载所有图片':'加载中，请您稍候'}}</div>
     </mt-loadmore>
-    <div class="floatBtm" v-if="showCheckBOx&&fileName">
-      <div class="checkBox">
+    <div class="floatBtm" v-if="showCheckBOx&&jumpTxt">
+      <div class="checkBox" v-if="fileName">
         <i :class="checkState?'checkIcon':'checkIcon1'" @click="changeState()"></i>
         <span class="checkText">{{fileName}}</span>
       </div>
-      <div class="btnBox">
+      <div class="btnBox" v-if="jumpTxt">
         <div class="nextBtn" @click="nextBtn">{{jumpTxt}}</div>
       </div>
     </div>
@@ -126,36 +127,36 @@ export default {
     },
     //下一步
     nextBtn: function() {
-      if (this.checkState) {
-        let info = {
-          head: {
-            transCode: "MSL6068",
-            transDate: getDate(),
-            transTime: getHms(),
-            transId: new Date().getTime(),
-            appid: this.appid,
-            appkey: this.appkey,
-            sign: "E8TRB2A0ZZ7LQ5QT503J3FIPR4PDVZ"
-          },
-          supplierId: "100001", //供应商ID
-          tenantId: "2017032717500543538",
-          businessNo: this.businessNo, //业务号
-          whetherCheck: "Y",
-          checkTime: moment(new Date()).format("YYYY-MM-DD hh:mm:ss")
-        };
-        postJsonML("order/receiptCheckRead", info, data => {
-          if (data.resultCode == "10") {
-            window.location.href = pdfPreInfo.jumpUrl;
-          } else {
-            alert(data.resultMsg);
-          }
-        });
+      if (this.fileName) {
+        if (this.checkState) {
+          let info = {
+            head: {
+              transCode: "MSL6068",
+              transDate: getDate(),
+              transTime: getHms(),
+              transId: new Date().getTime(),
+              appid: this.appid,
+              appkey: this.appkey,
+              sign: "E8TRB2A0ZZ7LQ5QT503J3FIPR4PDVZ"
+            },
+            supplierId: "100001", //供应商ID
+            tenantId: "2017032717500543538",
+            businessNo: this.businessNo, //业务号
+            whetherCheck: "Y",
+            checkTime: moment(new Date()).format("YYYY-MM-DD hh:mm:ss")
+          };
+          postJsonML("order/receiptCheckRead", info, data => {
+            if (data.resultCode == "10") {
+              window.location.href = this.jumpUrl;
+            } else {
+              alert(data.resultMsg);
+            }
+          });
+        } else {
+          alert("请勾选'" + this.fileName + "'");
+        }
       } else {
-        alert(
-          "请勾选'" + this.fileName
-            ? this.fileName
-            : "我已查阅电子保险合同并阅读其内容" + "'"
-        );
+        window.location.href = this.jumpUrl;
       }
     }
   },
@@ -174,7 +175,7 @@ export default {
       shareDesc,
       shareImgUrl
     } = this.$route.query;
-    this.title = decodeURIComponent(title);
+    this.title = title ? decodeURIComponent(title) : "查看电子保单";
     this.appid = appid ? decodeURIComponent(appid) : "WECHAT-APP-SERVER";
     this.appkey = appkey ? decodeURIComponent(appkey) : "DwRaJi6hMN";
     this.fileName = fileName ? decodeURIComponent(fileName) : "";
@@ -200,12 +201,10 @@ export default {
     this.getPdfImgList("1");
     if (shareAppid && shareTitle && shareTitle && shareImgUrl && shareDesc) {
       wxConfig({
-        appId: this.shareAppid ? this.shareAppid : "wxfee39ae209983e48",
-        title: this.shareTitle ? shareInfo.shareTitle : "电子保单查看", // 分享标题
-        desc: this.shareDesc
-          ? this.shareDesc
-          : "尊敬的先生/女士,请您查阅电子保单。", // 分享描述
-        imgUrl: this.shareImgUrl ? this.shareImgUrl : "",
+        appId: this.shareAppid,
+        title: this.shareTitle, // 分享标题
+        desc: this.shareDesc, // 分享描述
+        imgUrl: this.shareImgUrl,
         shareUrl: window.location.href
       });
     }
