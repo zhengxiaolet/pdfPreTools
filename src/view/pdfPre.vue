@@ -175,9 +175,9 @@ export default {
       // shareDesc,
       // shareImgUrl
     } = this.$route.query;
-    this.title = title ? decodeURIComponent(title) : "查看电子保单";
-    this.appid = appid ? decodeURIComponent(appid) : "WECHAT-APP-SERVER";
-    this.appkey = appkey ? decodeURIComponent(appkey) : "DwRaJi6hMN";
+    this.title = title ? decodeURIComponent(title) : "";
+    this.appid = appid ? decodeURIComponent(appid) : "";
+    this.appkey = appkey ? decodeURIComponent(appkey) : "";
     this.fileName = fileName ? decodeURIComponent(fileName) : "";
     this.jumpUrl = jumpUrl ? decodeURIComponent(jumpUrl) : "";
     this.jumpTxt = jumpTxt ? decodeURIComponent(jumpTxt) : "";

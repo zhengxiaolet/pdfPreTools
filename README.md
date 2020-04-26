@@ -26,9 +26,9 @@ if (navigator.userAgent.match(/iPad|iPhone/i)) {
 ```
 |属性|说明|类型|默认值|
 |:---|:---|:---|:---|
-|title|当前页面的名字|String|查看电子保单|
-|appid|本系统的appid|String|WECHAT-APP-SERVER|
-|appkey|本系统的appkey|String|DwRaJi6hMN|
+|title|当前页面的名字（必填）|String|空|
+|appid|本系统的appid（必填）|String|空|
+|appkey|本系统的appkey（必填）|String|空|
 |fileName|例如：我已阅读xxx|String|空|
 |jumpUrl|跳转的地址|String|空|
 |jumpTxt|跳转按钮文字|String|空|
