@@ -27,7 +27,7 @@ PDF在线预览插件（可支持分享）
 |属性|说明|类型|默认值|是否必传|
 |:---|:---|:---|:---|:---|
 |appid|公众号的appid|string|空|N|
-|title|分享链接的title|string|空|N|
+|shareTitle|分享链接的title|string|空|N|
 |desc|分享链接的描述|string|空|N|
 |imgUrl|分享链接的小图|string|空|N|
 <br>

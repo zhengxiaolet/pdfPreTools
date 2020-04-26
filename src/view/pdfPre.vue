@@ -165,13 +165,15 @@ export default {
       policyInfo,
       shareInfo
     } = this.$route.query;
-
     localStorage.setItem("pdfPreInfo", pdfInfo ? pdfInfo : policyInfo);
+    if(title){
+      localStorage.setItem("pdfPreInfo", pdfInfo ? pdfInfo : policyInfo);
+    }
     document.title = title ? title : "查看电子保单";
     this.getPdfImgList("1");
     wxConfig({
       appId: shareInfo ? shareInfo.appid : "wxfee39ae209983e48",
-      title: shareInfo ? shareInfo.title:"电子保单查看", // 分享标题
+      title: shareInfo ? shareInfo.shareTitle:"电子保单查看", // 分享标题
       desc:shareInfo ? shareInfo.desc:"尊敬的先生/女士,请您查阅电子保单。", // 分享描述
       imgUrl: shareInfo ? shareInfo.imgUrl : "",
       shareUrl: window.location.href
