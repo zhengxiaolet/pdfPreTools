@@ -55,6 +55,7 @@ export default {
       fileName: "", //例如：我已阅读xxx
       jumpUrl: "", //点击下一步跳转的地址
       jumpTxt: "", //跳转按钮文字
+      type: "", //保单类型（1：电子保单；2：其他）
       pdfUrl: "", //普通PDF的链接地址
       businessNo: "", //业务号
       shareAppid: "", //公众号的appid
@@ -98,6 +99,7 @@ export default {
         supplierId: "100001", //供应商ID
         businessNo: this.businessNo, //业务号
         pdfUrl: this.pdfUrl, //pdf链接
+        type:this.type,
         scaling: "2.5", //缩放比例
         reqType: "2", //转换类型
         imageType: "jpg", //图片类型
@@ -168,6 +170,7 @@ export default {
       fileName,
       jumpUrl,
       jumpTxt,
+      type,
       pdfUrl,
       businessNo,
       // shareAppid,
@@ -183,6 +186,7 @@ export default {
     this.jumpTxt = jumpTxt ? decodeURIComponent(jumpTxt) : "";
     this.pdfUrl = pdfUrl ? decodeURIComponent(pdfUrl) : "";
     this.businessNo = businessNo ? businessNo : "";
+    this.type = type ? type : "";
     // this.shareAppid = shareAppid ? decodeURIComponent(shareAppid) : "";
     // this.shareTitle = shareTitle ? decodeURIComponent(shareTitle) : "";
     // this.shareImgUrl = shareImgUrl ? decodeURIComponent(shareImgUrl) : "";
