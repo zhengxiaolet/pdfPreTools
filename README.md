@@ -33,7 +33,7 @@ if (navigator.userAgent.match(/iPad|iPhone/i)) {
 |title|当前页面的名字（必填）|String|空|
 |appid|本系统的appid（必填）|String|空|
 |appkey|本系统的appkey（必填）|String|空|
-|type|保单类型，1：电子保单；2：其他（必填）|String|空|
+|type|保单类型，1：电子保单；2：其他；（必填）|String|空|
 |fileName|例如：我已阅读xxx|String|空|
 |jumpUrl|跳转的地址|String|空|
 |jumpTxt|跳转按钮文字|String|空|
