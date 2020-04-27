@@ -1,8 +1,6 @@
 
 PDF在线预览插件
 ===
-Author：郑小皕
----
 >使用方式
 ```javascript
 //在页面里面引入iframe
@@ -54,3 +52,5 @@ if (navigator.userAgent.match(/iPad|iPhone/i)) {
 <br>
 
 
+Author：郑小皕
+---
