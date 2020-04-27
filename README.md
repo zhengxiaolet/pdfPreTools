@@ -13,7 +13,7 @@ PDF在线预览插件
     ></iframe>
 </div>
 //IOS系统微信浏览器iframe兼容性处理
-this.src:"https://test.jklife.com/pdfPreTools/#/pdfPre?appid="+encodeURIComponent('WECHAT-APP-SERVER')+"&appkey=DwRaJi6hMN&type=2&pdfUrl="+encodeURIComponent('http://test.jklife.com:8888/jkdsimage/images/product/img/product_comment/JK10205_YXJSTK.pdf')
+this.src = "https://test.jklife.com/pdfPreTools/#/pdfPre?appid="+encodeURIComponent('WECHAT-APP-SERVER')+"&appkey=DwRaJi6hMN&type=2&pdfUrl="+encodeURIComponent('http://test.jklife.com:8888/jkdsimage/images/product/img/product_comment/JK10205_YXJSTK.pdf')
 let ifram = document.getElementById("ifram");
 if (navigator.userAgent.match(/iPad|iPhone/i)) {
     let iframe_box = document.getElementById("iframe-box");
