@@ -4,15 +4,16 @@ PDF在线预览插件
 >使用方式
 ```javascript
 //在页面里面引入iframe
-<div id="iframe-box">
+ <div id="iframe-box">
     <iframe
-    src="https://test.jklife.com/pdfPreTools/#/pdfPre?businessNo=8088577873102568&jumpTxt=发送到"
+    :src="src"
     height="100%"
     width="100%"
     style="position:absolute;top:0;left: 0;"
     ></iframe>
 </div>
 //IOS系统微信浏览器iframe兼容性处理
+this.src:"https://test.jklife.com/pdfPreTools/#/pdfPre?appid="+encodeURIComponent('WECHAT-APP-SERVER')+"&appkey=DwRaJi6hMN&type=2&pdfUrl="+encodeURIComponent('http://test.jklife.com:8888/jkdsimage/images/product/img/product_comment/JK10205_YXJSTK.pdf')
 let ifram = document.getElementById("ifram");
 if (navigator.userAgent.match(/iPad|iPhone/i)) {
     let iframe_box = document.getElementById("iframe-box");
