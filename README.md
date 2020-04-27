@@ -15,6 +15,7 @@ PDF在线预览插件
 
 //参数有特殊字符需要转码
 this.src = "https://test.jklife.com/pdfPreTools/#/pdfPre?appid="+encodeURIComponent('WECHAT-APP-SERVER')+"&appkey=DwRaJi6hMN&type=2&pdfUrl="+encodeURIComponent('http://test.jklife.com:8888/jkdsimage/images/product/img/product_comment/JK10205_YXJSTK.pdf')
+
 //IOS系统微信浏览器iframe兼容性处理
 let ifram = document.getElementById("ifram");
 if (navigator.userAgent.match(/iPad|iPhone/i)) {
